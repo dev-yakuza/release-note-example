@@ -1,6 +1,9 @@
 name-template: "v$RESOLVED_VERSION"
 tag-template: "v$RESOLVED_VERSION"
 categories:
+  - title: "⚠️ Breaking changes"
+    labels:
+      - "breaking change"
   - title: "🚀 Features"
     labels:
       - "feature"
@@ -22,10 +25,14 @@ categories:
       - 'refactor'
       - 'test'
       - 'chore'
+      - 'ci'
     collapse-after: 5
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 change-title-escapes: '\<*_&'
 autolabeler:
+  - label: 'breaking change'
+    title:
+      - '/BREAKING CHANGE:/i'
   - label: 'feature'
     title:
       - '/feat:/i'
@@ -47,6 +54,9 @@ autolabeler:
   - label: 'docs'
     title:
       - '/docs:/i'
+  - label: 'ci'
+    title:
+      - '/ci:/i'
   - label: 'dependencies'
     title:
       - '/deps:/i'
