@@ -7,13 +7,6 @@ categories:
   - title: "🐛 Bug Fixes"
     labels:
       - "bug"
-  - title: '🔬 Others'
-    labels:
-      - 'style'
-      - 'refactor'
-      - 'test'
-      - 'chore'
-    collapse-after: 5
   - title: "📃 Documents"
     labels:
       - "docs"
@@ -22,6 +15,13 @@ categories:
       - deps
       - dependencies
       - bump
+    collapse-after: 5
+  - title: '🔬 Others'
+    labels:
+      - 'style'
+      - 'refactor'
+      - 'test'
+      - 'chore'
     collapse-after: 5
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 change-title-escapes: '\<*_&'
