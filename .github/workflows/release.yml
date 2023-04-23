@@ -22,4 +22,5 @@ jobs:
           version: ${{ steps.semver.outputs.version }}
           publish: true
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # https://github.com/stefanzweifel/changelog-updater-action/discussions/30
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
