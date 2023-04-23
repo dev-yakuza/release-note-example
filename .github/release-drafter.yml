@@ -32,7 +32,7 @@ change-title-escapes: '\<*_&'
 autolabeler:
   - label: 'breaking change'
     title:
-      - '/BREAKING CHANGE:/i'
+      - '/!:/i'
   - label: 'feature'
     title:
       - '/feat:/i'
