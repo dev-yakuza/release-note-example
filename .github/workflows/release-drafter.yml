@@ -8,6 +8,7 @@ on:
     types:
       - opened
       - reopened
+      - edited
       - synchronize
 
 permissions:
@@ -19,12 +20,19 @@ jobs:
       contents: write
       pull-requests: write
       checks: write
+      statuses: write
     runs-on: ubuntu-latest
     steps:
-      - uses: release-drafter/release-drafter@v5
+      - name: Check Pull request title
+        uses: aslafy-z/conventional-pr-title-action@v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: danielchabr/pr-labels-checker@v3.1
+      - name: Update release note
+        uses: release-drafter/release-drafter@v5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Check label
+        uses: danielchabr/pr-labels-checker@v3.1
         with:
           hasSome: breaking change,feature,bug,style,refactor,test,chore,docs,ci,dependencies
           githubToken: ${{ secrets.GITHUB_TOKEN }}
