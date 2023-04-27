@@ -71,9 +71,9 @@ autolabeler:
       - '/deps:/i'
       - '/dependencies:/i'
       - '/bump:/i'
-change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 change-title-escapes: '\<*_&'
 commitish: main
+change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 template: |
   ## Changes
 
