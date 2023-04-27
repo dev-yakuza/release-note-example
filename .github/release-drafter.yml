@@ -1,5 +1,16 @@
 name-template: "v$RESOLVED_VERSION"
 tag-template: "v$RESOLVED_VERSION"
+version-resolver:
+  major:
+    labels:
+      - 'major'
+  minor:
+    labels:
+      - 'minor'
+  patch:
+    labels:
+      - 'patch'
+  default: patch
 categories:
   - title: "⚠️ Breaking changes"
     labels:
@@ -27,8 +38,6 @@ categories:
       - 'chore'
       - 'ci'
     collapse-after: 5
-change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
-change-title-escapes: '\<*_&'
 autolabeler:
   - label: 'breaking change'
     title:
@@ -62,17 +71,8 @@ autolabeler:
       - '/deps:/i'
       - '/dependencies:/i'
       - '/bump:/i'
-version-resolver:
-  major:
-    labels:
-      - 'major'
-  minor:
-    labels:
-      - 'minor'
-  patch:
-    labels:
-      - 'patch'
-  default: patch
+change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+change-title-escapes: '\<*_&'
 commitish: main
 template: |
   ## Changes
